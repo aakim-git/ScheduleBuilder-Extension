@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+ 
+  "name": "Modify CSS and HTML",
+  "version": "0.1.0",
+  "description": "rtm thingy",
+ 
+  "permissions": [
+	"tabs",
+	"http://www.ratemyprofessors.com/filter/professor/?department=&institution=University+Of+California%2C+Davis&page=*"
+  ],
+
+  "browser_action":{
+    "default_icon": "ball.png",
+	"default_popup": "popup.html"
+  },
+
+  "content_scripts": [{
+    "run_at": "document_idle",
+    "js": ["script.js"],
+    "matches": ["https://my.ucdavis.edu/schedulebuilder/*"]
+  }]
+
+  }
